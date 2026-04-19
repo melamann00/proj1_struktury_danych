@@ -254,51 +254,57 @@ void wysw() {
     list.addBack(10);
     list.addBack(20);
     list.addBack(30);
-    auto  time = duration_cast<microseconds>(high_resolution_clock::now()- start).count();
+    auto time = duration_cast<nanoseconds>(high_resolution_clock::now()- start).count();
     cout << "addBack(10,20,30): "; 
     list.print();
-    cout<<"Czas wykonania: "<<time<<" µs"<<endl;
+    cout<<"Czas wykonania: "<<time<<" ns"<<endl;
     }{
     auto start = high_resolution_clock::now();
     list.addFront(5);
-    auto  time = duration_cast<microseconds>(high_resolution_clock::now()- start).count();
+    auto time = duration_cast<nanoseconds>(high_resolution_clock::now()- start).count();
     cout << "addFront(5): "; 
     list.print();
-    cout<<"Czas wykonania: "<<time<<" µs"<<endl;
+    cout<<"Czas wykonania: "<<time<<" ns"<<endl;
     }{
     auto start = high_resolution_clock::now();
     list.addAt(2, 15);
-    auto  time = duration_cast<microseconds>(high_resolution_clock::now()- start).count();
+    auto time = duration_cast<nanoseconds>(high_resolution_clock::now()- start).count();
     cout << "addAt(2,15): "; 
     list.print();
-    cout<<"Czas wykonania: "<<time<<" µs"<<endl;
+    cout<<"Czas wykonania: "<<time<<" ns"<<endl;
     }{
     auto start = high_resolution_clock::now();
     list.removeFront();
-    auto  time = duration_cast<microseconds>(high_resolution_clock::now()- start).count();
+    auto time = duration_cast<nanoseconds>(high_resolution_clock::now()- start).count();
     cout << "removeFront(): "; 
     list.print();
-    cout<<"Czas wykonania: "<<time<<" µs"<<endl;
+    cout<<"Czas wykonania: "<<time<<" ns"<<endl;
     }{
     auto start = high_resolution_clock::now();
     list.removeBack();
-    auto  time = duration_cast<microseconds>(high_resolution_clock::now()- start).count();
+    auto time = duration_cast<nanoseconds>(high_resolution_clock::now()- start).count();
     cout << "removeBack(): "; 
     list.print();
+    cout<<"Czas wykonania: "<<time<<" ns"<<endl;
     }{
     auto start = high_resolution_clock::now();
     list.removeAt(1);
-    auto  time = duration_cast<microseconds>(high_resolution_clock::now()- start).count();
+    auto time = duration_cast<nanoseconds>(high_resolution_clock::now()- start).count();
     cout<< "removeAt(1): "; 
     list.print();
+    cout<<"Czas wykonania: "<<time<<" ns"<<endl;
     }{
     auto start = high_resolution_clock::now();
-    cout<< "find(10) = " << list.find(10) << "\n";
-    auto  time = duration_cast<microseconds>(high_resolution_clock::now()- start).count();
+    int a = list.find(10);
+    auto time = duration_cast<nanoseconds>(high_resolution_clock::now()- start).count();
+    cout<<"find(10) = "<<a<<endl;
+    cout<<"Czas wykonania: "<<time<<" ns"<<endl;
     }{
     auto start = high_resolution_clock::now();
-    cout<< "find(99) = " << list.find(99) << "\n";
-    auto  time = duration_cast<microseconds>(high_resolution_clock::now()- start).count();
+    int b = list.find(99);
+    auto time = duration_cast<nanoseconds>(high_resolution_clock::now()- start).count();
+    cout<<"find(99) = "<<b<<endl;
+    cout<<"Czas wykonania: "<<time<<" ns"<<endl;
     }
     cout<< "Tablica dynamiczna\n";
     DynamicArray<int> arr(4);
@@ -307,53 +313,65 @@ void wysw() {
     arr.addBack(10);
     arr.addBack(20);
     arr.addBack(30);
+    auto time = duration_cast<nanoseconds>(high_resolution_clock::now()- start).count();
     cout<< "addBack(10,20,30): ";
     arr.print();
+    cout<<"Czas wykonania: "<<time<<" ns"<<endl;
     }{
     auto start = high_resolution_clock::now();
     arr.addFront(5);
-    auto  time = duration_cast<microseconds>(high_resolution_clock::now()- start).count();
+    auto time = duration_cast<nanoseconds>(high_resolution_clock::now()- start).count();
     cout<< "addFront(5): ";
     arr.print();
+    cout<<"Czas wykonania: "<<time<<" ns"<<endl;
     }{
     auto start = high_resolution_clock::now();
     arr.addAt(2, 15);
-    auto  time = duration_cast<microseconds>(high_resolution_clock::now()- start).count();
+    auto time = duration_cast<nanoseconds>(high_resolution_clock::now()- start).count();
     cout<< "addAt(2,15): ";
     arr.print();
+    cout<<"Czas wykonania: "<<time<<" ns"<<endl;
     }{
     auto start = high_resolution_clock::now();
     arr.addBack(40);
     arr.addBack(50);
-    auto  time = duration_cast<microseconds>(high_resolution_clock::now()- start).count();
+    auto time = duration_cast<nanoseconds>(high_resolution_clock::now()- start).count();
     cout<< "addBack(40,50): ";
     arr.print();
+    cout<<"Czas wykonania: "<<time<<" ns"<<endl;
     }{
     auto start = high_resolution_clock::now();
     arr.removeFront();
-    auto  time = duration_cast<microseconds>(high_resolution_clock::now()- start).count();
+    auto time = duration_cast<nanoseconds>(high_resolution_clock::now()- start).count();
     cout<< "removeFront(): ";
     arr.print();
+    cout<<"Czas wykonania: "<<time<<" ns"<<endl;
     }{
     auto start = high_resolution_clock::now();
     arr.removeBack();
-    auto  time = duration_cast<microseconds>(high_resolution_clock::now()- start).count();
+    auto time = duration_cast<nanoseconds>(high_resolution_clock::now()- start).count();
     cout<< "removeBack(): ";
     arr.print();
+    cout<<"Czas wykonania: "<<time<<" ns"<<endl;
     }{
     auto start = high_resolution_clock::now();
     arr.removeAt(1);
-    auto  time = duration_cast<microseconds>(high_resolution_clock::now()- start).count();
+    auto time = duration_cast<nanoseconds>(high_resolution_clock::now()- start).count();
     cout<< "removeAt(1): ";
     arr.print();
+    cout<<"Czas wykonania: "<<time<<" ns"<<endl;
     }{
     auto start = high_resolution_clock::now();
-    cout<< "find(10) = " << arr.find(10) << "\n";
-    auto  time = duration_cast<microseconds>(high_resolution_clock::now()- start).count();
+    int a = arr.find(10);
+    auto time = duration_cast<nanoseconds>(high_resolution_clock::now()- start).count();
+    cout<<"find(10) = "<<a<<endl;
+    cout<<"Czas wykonania: "<<time<<" ns"<<endl;
     }{
     auto start = high_resolution_clock::now();
-    cout<< "find(99) = " << arr.find(99) << "\n";
-    auto  time = duration_cast<microseconds>(high_resolution_clock::now()- start).count();
+    int b = arr.find(99);
+    auto time = duration_cast<nanoseconds>(high_resolution_clock::now()- start).count();
+    cout<<"find(99) = "<<b<<endl;
+    cout<<"Czas wykonania: "<<time<<" ns"<<endl;
     }
 }
 
